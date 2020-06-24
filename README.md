@@ -19,7 +19,7 @@ python plot_mobilenet_predictions_video
 ```
 
 You can add parameters like 
-- `--input = path_to_input_video` If you don't, it will propose you to infer on one of the video in the current directory.
+- `--input = path_to_input_video` If you don't provide it, it will propose you to infer on one of the video in the current directory.
 - `--out = path_to_otput_video` If you don't provide it, it defaults to 'output_video.avi'
 - `--step= step_of_inference` default is 10: It infers once every 10 frames ~ 3 times per second
 
