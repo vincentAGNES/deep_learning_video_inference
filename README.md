@@ -1,8 +1,15 @@
-# Infer on Videos 
+## Infer on Videos 
 
-This little repo is about deep learning video inference. It aims at plotting the prediction of a classification model on a video.
+This little repo is about deep learning video inference. 
+
+![Maskrcnn Demo](demo.gif)
+
+It is all about post treatment of the video. 
 
 It uses mobileNetV2 model from https://pytorch.org/hub/pytorch_vision_mobilenet_v2 trained on ImageNet dataset but you can easily custom it with your own model.
+
+The second part uses MaskRCNN model from the PyTorch models module trained on the COCO dataset.
+
 ### requirements
 You need to have python installed with the following library:
 - `torch`
@@ -25,3 +32,17 @@ You can add parameters like
 
 ### Comments
 CLASSES in the file [classes.json](classes.json) are the one of ImageNet. You can also custom it and put your own classes.
+
+## Infer on video with MaskRCNN
+
+```
+python plot_maskrcnn_predictions_video.py
+```
+You can add same parameters as with light model and behavior is the same
+- `--shape = poly or bbox` if shape is poly, then polygons are plotted, else bbox are plotted to locate corrosion area detected
+
+If you don't have any GPU and a slow computer, it might takes some time: 
+- `~ 10 minutes for 2 minutes videos` with `step=10` 
+ - `up to 6 hours for 2 minutes video` with `step=1`...  
+
+
