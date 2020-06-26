@@ -2,7 +2,7 @@
 
 This little repo is about deep learning video inference. 
 
-![Maskrcnn Demo](demo.gif)
+<center>![Maskrcnn Demo](demo.gif)</center>
 
 This is a small foretaste of the outputs oh this program. It is all about post treatment of the video.  
 
