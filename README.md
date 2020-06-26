@@ -4,7 +4,7 @@ This little repo is about deep learning video inference.
 
 ![Maskrcnn Demo](demo.gif)
 
-It is all about post treatment of the video. 
+This is a small foretaste of the outputs oh this program. It is all about post treatment of the video.  
 
 It uses mobileNetV2 model from https://pytorch.org/hub/pytorch_vision_mobilenet_v2 trained on ImageNet dataset but you can easily custom it with your own model.
 
