@@ -63,13 +63,13 @@ if __name__ == '__main__':
         args.out = splitted_out[0] + '(1).' + splitted_out[1]
 
     output_video = cv2.VideoWriter(args.out,cv2.VideoWriter_fourcc('M','J','P','G'), 10, (frame_width,frame_height))
-    frame_number = True
+    frame_number = 0
     font = cv2.FONT_HERSHEY_SIMPLEX 
     while True:  # Iterate over video frames
         success, frame = vidcap.read() # get the frame
         if not success:
             break
-        if frame_number // args.step == 0:  # predict with mobilenet
+        if frame_number % args.step == 0:  # predict with mobilenet
             img = Image.fromarray(frame)  # frame to PIL Image
             img = valid_transform(img)
             img = img.to(device)
@@ -79,7 +79,7 @@ if __name__ == '__main__':
         text = CLASSES[str(int(preds))]
         cv2.putText(frame, text, (200, 200), font, 3, (0, 255, 0), 5, cv2.LINE_4)
         output_video.write(frame)
-        frame_number +=1
+        frame_number += 1
     vidcap.release() 
     output_video.release()    
 
